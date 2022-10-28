@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h3 id="DarkModetext">Dark Mode is OFF</h3>
+    <button onclick="darkMode()">Darkmode</button>
+    <button onclick="lightMode()">LightMode</button>
+    
+    <div class="big"> 
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+            </div>
+            <div class="social-icons">
+                <img src="fb.png">
+                <img src="tw.png">
+                <img src="gp.png">
+            </div>
+            <form id="login" class="input-group">
+                <input type="text" class="input-field" placeholder="User-Id" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <br><br>
+                    <label for="file">Upload file: </label>
+                    <input type="file"  class="file" placeholder="Upload file"><br><br>
+                    <label for="message">Feedback: </label>
+                    <textarea name="message" class="feedback" id="message" cols="40" rows="6"></textarea>
+                
+                <input type="checkbox" class="check-box"><span>Remember Password</span>
+                <button type="submit" class="submit-btn">Log in</button>
+            </form>
+
+            <form id="register" class="input-group">
+                <input type="text" class="input-field" placeholder="User-Id" required>
+                <input type="email" class="input-field" placeholder="Email Id" required>
+                <input type="text" class="input-field" placeholder="Enter Password" required>
+                <br><br>
+                    <label for="file">Upload file: </label>
+                    <input type="file"  class="file" placeholder="Upload file"><br><br>
+                    <label for="message">Feedback: </label>
+                    <textarea name="message" class="feedback" id="message" cols="40" rows="6"></textarea>
+                
+                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
+                <button type="submit" class="submit-btn">Register</button>
+            </form>
+        </div>
+        
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register(){
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+        function login(){
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+
+        function darkMode() {
+            var element = document.body;
+            var content = document.getElementById("DarkModetext");
+            element.className = "dark-mode";
+            content.innerText = "Dark Mode is ON";
+         }
+        function lightMode() {
+           var element = document.body;
+           var content = document.getElementById("DarkModetext");
+           element.className = "light-mode";
+           content.innerText = "Dark Mode is OFF";
+        }
+    </script>
+</body>
+</html>
